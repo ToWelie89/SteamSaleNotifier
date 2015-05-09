@@ -1,9 +1,10 @@
 require.config({
     baseUrl: 'assets/js',
     paths: {
-        jquery: 'jquery-2.1.1.min',
+        jquery: 'libs/jquery-2.1.1.min',
         constants: 'constants',
-        helpers: 'helpers'
+        helpers: 'helpers',
+        angular: 'libs/angular.min'
     }
 });
 

@@ -2,16 +2,19 @@
 <html xmlns="http:/www.w3.org/1999/xhtml">
     <head>
         <meta charset="utf-8"/>
-        <script data-main="js/init" src="js/require.js"></script>
-        <link rel="stylesheet" type="text/css" href="css/default.css">
+        <script data-main="assets/js/init" src="assets/js/libs/require.js"></script>
+        <script src="assets/js/libs/angular.min.js"></script>
+        <script src="assets/js/angular/config/app.js"></script>
+        <script src="assets/js/angular/controllers/mainController.js"></script>
+        <link rel="stylesheet" type="text/css" href="assets/styles/default.css">
         <title>
-            Title
+            Steam Sale Notifier
         </title>
     </head>
-    <body>
+    <body ng-app="steamSaleApp">
        <div id="main">
             <p id="sizeIndicator"></p>
-            <h1>BlankProjectTemplate!</h1>
+            <h1>Steam Sale Notifier</h1>
        </div>
     </body>
 </html>
