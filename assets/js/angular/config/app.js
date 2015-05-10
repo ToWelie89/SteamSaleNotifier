@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('steamSaleApp', []);
+var app = angular.module('steamSaleApp', []);

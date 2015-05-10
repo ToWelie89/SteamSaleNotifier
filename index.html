@@ -5,16 +5,18 @@
         <script data-main="assets/js/init" src="assets/js/libs/require.js"></script>
         <script src="assets/js/libs/angular.min.js"></script>
         <script src="assets/js/angular/config/app.js"></script>
+        <script src="assets/js/angular/services/steamService.js"></script>
         <script src="assets/js/angular/controllers/mainController.js"></script>
         <link rel="stylesheet" type="text/css" href="assets/styles/default.css">
         <title>
             Steam Sale Notifier
         </title>
     </head>
-    <body ng-app="steamSaleApp">
+    <body ng-app="steamSaleApp" ng-controller="mainController">
        <div id="main">
             <p id="sizeIndicator"></p>
             <h1>Steam Sale Notifier</h1>
+            <div ng-repeat="app in fullGameList" ng-bind="app.name"></div>
        </div>
     </body>
 </html>

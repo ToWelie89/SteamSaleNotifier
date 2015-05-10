@@ -1,24 +1,20 @@
-angular.module('steamSaleApp', []).
-controller('mainController', function($scope) {
-    $scope.driversList = [{
-        Driver: {
-            givenName: 'Sebastian',
-            familyName: 'Vettel'
-        },
-        points: 322,
-        nationality: "German",
-        Constructors: [{
-            name: "Red Bull"
-        }]
-    }, {
-        Driver: {
-            givenName: 'Fernando',
-            familyName: 'Alonso'
-        },
-        points: 207,
-        nationality: "Spanish",
-        Constructors: [{
-            name: "Ferrari"
-        }]
-    }];
-});
+app.controller('mainController', ['$scope', '$log', 'steamService', function($scope, log, steamService) {
+	$scope.fullGameList;
+
+    function init() {
+        var promise = steamService.getFullSteamGameList();
+
+        var successCallback = function(response) {
+            log.debug('The stuff: ', response.data);
+            $scope.fullGameList = response.data;
+        };
+
+        var errorCallback = function() {
+            log.error(':(');
+        };
+
+        return promise.then(successCallback, errorCallback);
+    }
+
+    init();
+}]);
